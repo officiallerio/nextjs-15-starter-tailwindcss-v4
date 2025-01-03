@@ -6,7 +6,9 @@
         "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\" --ignore-pattern \"node_modules/*\" --ignore-pattern \".next/*\"",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\" --ignore-path .prettierignore"
     },
     "dependencies": {
         "geist": "^1.3.1",

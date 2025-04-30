@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
-import './globals.css';
+import '@/app/globals.css';
+
 import { GeistMono } from 'geist/font/mono';
 import { GeistSans } from 'geist/font/sans';
 
@@ -16,6 +17,7 @@ export default function RootLayout({
 }>) {
     return (
         <html
+        suppressHydrationWarning
             lang='en'
             className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}>
             <body>{children}</body>

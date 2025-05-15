@@ -62,8 +62,8 @@ To enhance development experience, install the following VS Code extensions:
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/officiallerio/nextjs-15-starter.git
-    cd nextjs-15-starter
+    git clone https://github.com/officiallerio/nextjs-15-starter-tailwindcss-v4.git
+    cd nextjs-15-starter-tailwindcss-v4
     ```
 
 2. **Install Dependencies**:

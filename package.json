@@ -1,14 +1,14 @@
 {
   "name": "nextjs-15-starter-tailwindcss-v4",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\" --ignore-pattern \"node_modules/*\" --ignore-pattern \".next/*\"",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\" --ignore-path .prettierignore"
+    "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "geist": "^1.4.2",

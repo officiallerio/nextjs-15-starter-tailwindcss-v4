@@ -21,7 +21,7 @@ Welcome to the **Next.js 15 Starter** repository! This starter template is built
 - [**eslint-plugin-react**](https://github.com/jsx-eslint/eslint-plugin-react)
 - [**@next/eslint-plugin-next**](https://github.com/vercel/next.js)
 - [**eslint-config-prettier**](eslint-config-prettier)
-- [**eslint-plugin-tailwindcss**](https://github.com/francoismassart/eslint-plugin-tailwindcss)
+- [**eslint-plugin-tailwindcss**](https://github.com/francoismassart/eslint-plugin-tailwindcss) // NOT USED SINCE ITS NOT SUPPORTED ON V4
 - [**eslint-plugin-import**](https://github.com/import-js/eslint-plugin-import)
 - [**eslint-plugin-promise**](https://github.com/eslint-community/eslint-plugin-promise)
 

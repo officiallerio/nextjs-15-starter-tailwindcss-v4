@@ -22,7 +22,7 @@
     "@tailwindcss/postcss": "^4.1.7",
     "@eslint/js": "^9.26.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "@types/node": "^22.15.18",
+    "@types/node": "^22.15.23",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
     "eslint": "^9.26.0",

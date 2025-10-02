@@ -14,7 +14,7 @@
     "geist": "^1.4.2",
     "next": "^15.4.4",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -24,7 +24,7 @@
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^24.1.0",
     "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
+    "@types/react-dom": "^19.2.0",
     "eslint": "^9.32.0",
     "eslint-config-next": "^15.4.4",
     "eslint-config-prettier": "^10.1.8",

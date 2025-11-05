@@ -19,11 +19,13 @@ Welcome to the **Next.js 15 Starter** repository! This starter template is built
 - [**@eslint/js**](https://www.npmjs.com/package/@eslint/js)
 - [**typescript-eslint**](https://github.com/typescript-eslint/typescript-eslint)
 - [**eslint-plugin-react**](https://github.com/jsx-eslint/eslint-plugin-react)
-- [**@next/eslint-plugin-next**](https://github.com/vercel/next.js)
-- [**eslint-config-prettier**](eslint-config-prettier)
-- [**eslint-plugin-tailwindcss**](https://github.com/francoismassart/eslint-plugin-tailwindcss) // NOT USED SINCE ITS NOT SUPPORTED ON V4
+- [**@next/eslint-plugin-next**](https://github.com/vercel/next.js/tree/canary/packages/eslint-plugin-next)
+- [**eslint-config-prettier**](https://github.com/prettier/eslint-config-prettier)
 - [**eslint-plugin-import**](https://github.com/import-js/eslint-plugin-import)
 - [**eslint-plugin-promise**](https://github.com/eslint-community/eslint-plugin-promise)
+- [**@tanstack/eslint-plugin-query**](https://github.com/TanStack/query/tree/main/packages/eslint-plugin-query)
+- [**eslint-plugin-unused-imports**](https://github.com/sweepline/eslint-plugin-unused-imports)
+- [**globals**](https://github.com/sindresorhus/globals)
 
 ### ✨ Prettier Plugins
 

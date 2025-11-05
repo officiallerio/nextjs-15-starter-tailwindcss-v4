@@ -1,4 +1,4 @@
-# Next.js 15 Starter (TailwindCSS v4)
+# Next.js 15 Starter
 
 Welcome to the **Next.js 15 Starter** repository! This starter template is built with Next.js 15, React 19, TypeScript 5, Tailwind CSS 4 and comes packed with several powerful tools and configurations to accelerate your project setup and streamline development workflows using VS Code.
 
@@ -64,8 +64,8 @@ To enhance development experience, install the following VS Code extensions:
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/officiallerio/nextjs-15-starter-tailwindcss-v4.git
-    cd nextjs-15-starter-tailwindcss-v4
+    git clone https://github.com/officiallerio/nextjs-15-starter.git
+    cd nextjs-15-starter
     ```
 
 2. **Install Dependencies**:
@@ -92,9 +92,9 @@ To enhance development experience, install the following VS Code extensions:
 To use Docker, make sure Docker is installed on your machine. Then, build and run the Docker container:
 
 ```bash
-docker build . -t nextjs-15-starter-tailwindcss-v4
+docker build . -t nextjs-15-starter
 # or if using Bun
-docker build . -t nextjs-15-starter-tailwindcss-v4 -f Dockerfile.bun
+docker build . -t nextjs-15-starter -f Dockerfile.bun
 
-docker run -p 3000:3000 nextjs-15-starter-tailwindcss-v4
+docker run -p 3000:3000 nextjs-15-starter
 ```

@@ -1,67 +1,71 @@
 import pluginJs from '@eslint/js';
 import nextPlugin from '@next/eslint-plugin-next';
+import pluginTanstackQuery from '@tanstack/eslint-plugin-query';
 
 import eslintConfigPrettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
 import pluginPromise from 'eslint-plugin-promise';
 import pluginReact from 'eslint-plugin-react';
+import pluginUnusedImports from 'eslint-plugin-unused-imports';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default [
+export default defineConfig([
+  pluginJs.configs.recommended,
+  importPlugin.flatConfigs.recommended,
+  ...tseslint.configs.recommended,
+  pluginPromise.configs['flat/recommended'],
+  pluginReact.configs.flat.recommended,
+  pluginReact.configs.flat['jsx-runtime'],
+  pluginTanstackQuery.configs['flat/recommended'],
+  eslintConfigPrettier,
   {
-    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}']
-  },
-  {
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
       globals: { ...globals.browser, ...globals.node }
-    }
-  },
-  {
+    },
     settings: {
-      react: {
-        version: 'detect'
+      react: { version: 'detect' },
+      'import/resolver': {
+        typescript: { project: './tsconfig.json' },
+        node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
       }
-    }
-  },
-  pluginJs.configs.recommended, // ? https://github.com/eslint/eslint
-  importPlugin.flatConfigs.recommended, // ? https://github.com/import-js/eslint-plugin-import
-  ...tseslint.configs.recommended, // ? https://github.com/typescript-eslint/typescript-eslint
-  pluginPromise.configs['flat/recommended'], // ? https://github.com/eslint-community/eslint-plugin-promise
-  pluginReact.configs.flat.recommended, // ? https://github.com/jsx-eslint/eslint-plugin-react
-  pluginReact.configs.flat['jsx-runtime'], // ? https://github.com/jsx-eslint/eslint-plugin-react
-  eslintConfigPrettier, // ? https://github.com/prettier/eslint-config-prettier
-  {
-    rules: {
-      'no-unused-vars': 'off',
-      'react/react-in-jsx-scope': 'off',
-      'react-hooks/exhaustive-deps': 'off',
-      'react/display-name': 'off',
-      'react/prop-types': 'off',
-      'newline-before-return': 'error',
-      '@typescript-eslint/no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-expressions': 'off',
-      'import/no-unresolved': 'off',
-      'import/no-named-as-default': 'off'
-    }
-  },
-  // ! ===================== DISCLAIMER =====================
-  // ! There is no official solution available for new ESLint 9 flat config structure for NextJS
-  // ! The solution is taken from the community and may not be the best practice, use it at your own risk
-  // ? Ref: https://github.com/vercel/next.js/discussions/49337?sort=top#discussioncomment-5998603
-  // ! ======================================================
-  {
+    },
     plugins: {
+      'unused-imports': pluginUnusedImports,
       '@next/next': nextPlugin
     },
     rules: {
+      // Unused imports / vars
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'error',
+      'unused-imports/no-unused-vars': [
+        'warn',
+        { vars: 'all', varsIgnorePattern: '^_', argsIgnorePattern: '^_' }
+      ],
+
+      // React / Next
+      'react/react-in-jsx-scope': 'off',
+      'react-hooks/exhaustive-deps': 'off',
+      'react/display-name': 'off',
+      'react/prop-types': 'off', // ✅ stays off now
+      '@next/next/no-img-element': 'off',
+
+      // Misc
+      'newline-before-return': 'error',
+      '@typescript-eslint/no-unused-expressions': 'off',
+      'import/no-unresolved': 'off',
+      'import/no-named-as-default': 'off',
+      '@typescript-eslint/no-empty-object-type': [
+        'error',
+        { allowInterfaces: 'with-single-extends' }
+      ],
       ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs['core-web-vitals'].rules,
-      '@next/next/no-img-element': 'off'
+      ...nextPlugin.configs['core-web-vitals'].rules
     }
   },
-  {
-    ignores: ['.next/*']
-  }
-];
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts'])
+]);
